@@ -3,30 +3,46 @@
   <head>
     <title>Weight Tracker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Include CSRF and CSP meta tags for security -->
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <!-- Include Tailwind CSS and Inter font stylesheet, set to reload on changes -->
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <!-- Include the main application stylesheet, set to reload on changes -->
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <!-- Include JavaScript import maps for module management -->
     <%= javascript_importmap_tags %>
   </head>
   <body>
+    <!-- Header section with a blue background, white text, and padding -->
     <div class="header bg-blue-600 text-white py-5 px-5 flex">
+      <!-- Site logo or abbreviation -->
       <h1 class="text-2xl font-medium">WT</h1>
+      <!-- Navigation links positioned to the left of the header -->
       <div class="mr-auto ml-5 flex items-center space-x-5">
+        <!-- Home link -->
         <a href="<%= root_path %>" class="text-white font-medium">Home</a>
+        <!-- Link to the weights index page -->
         <a href="<%= weights_path %>" class="text-white font-medium">Weights</a>
+        <!-- Link to the new weight entry page -->
         <a href="<%= new_weight_path %>" class="text-white font-medium">New Weight</a>
       </div>
+      <!-- User authentication links positioned to the right of the header -->
       <div class="ml-auto">
         <% if current_user %>
+          <!-- Link to sign out if the user is logged in -->
           <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "text-white font-medium" %>
         <% else %>
+          <!-- Link to sign in if the user is not logged in -->
           <a href="<%= new_user_session_path %>" class="text-white font-medium">Sign in</a>
+          <!-- Link to sign up if the user is not logged in -->
           <a href="<%= new_user_registration_path %>" class="text-white font-medium">Sign up</a>
         <% end %>
       </div>
     </div>
+    <!-- Main content area, with container class for centering and margin for spacing -->
     <main class="container mx-auto mt-28 px-5 flex">
+      <!-- Yield to the content of the specific view being rendered -->
       <%= yield %>
     </main>
   </body>

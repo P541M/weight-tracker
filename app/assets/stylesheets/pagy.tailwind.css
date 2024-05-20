@@ -1,22 +1,28 @@
 .pagy {
+    /* Apply flexbox layout, spacing between elements, and text styles for the pagination container */
     @apply flex space-x-1 font-semibold text-sm text-gray-500;
   }
   
   .pagy a {
+    /* Apply block display, rounded corners, padding, background color, and text color for pagination links */
     @apply block rounded-lg px-3 py-1 bg-gray-200 text-gray-600;
-    /* Default styles */
+    /* Default styles for pagination links */
   }
   
   .pagy a:hover {
+    /* Change background color on hover for pagination links */
     @apply bg-gray-300;
   }
   
   .pagy a.current {
+    /* Apply text color and background color for the current page link */
     @apply text-white bg-gray-400;
-    /* Current page styles */
+    /* Styles for the current page link */
   }
   
   .pagy a:not([href]) {
+    /* Apply text color, background color, and disable cursor for links without href (disabled links) */
     @apply text-gray-300 bg-gray-100 cursor-default;
     /* Disabled link styles */
   }
+  

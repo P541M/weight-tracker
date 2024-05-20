@@ -1,11 +1,13 @@
 <%= form_with(model: weight, class: "contents",
   data: { 
       controller: "weight-form", 
-      # Default weight unit
+      # Default weight unit is set dynamically using the @default_unit instance variable
       weight_form_default_unit_value: @default_unit
       }
   ) do |form| %>
+  
   <% if weight.errors.any? %>
+    <!-- Display error messages if there are any validation errors -->
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(weight.errors.count, "error") %> prohibited this weight from being saved:</h2>
       <ul>
@@ -15,14 +17,18 @@
       </ul>
     </div>
   <% end %>
+  
   <div class="my-5">
+    <!-- Label for the weight value input field -->
     <%= form.label :value %>
     <div class="flex items-center space-x-2">
+      <!-- Input field for weight value with a step value for precision, placeholder text, and CSS classes for styling -->
       <%= form.text_field :value, 
         step: 0.01, 
         placeholder: "Your weight...", 
         data: { weight_form_target: "input" }, 
         class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2" %>
+      <!-- Dropdown select for weight unit (kg or lbs), with an event action for conversion and CSS classes for styling -->
       <%= form.select :unit, 
         options_for_select([['kg', 'kg'], ['lbs', 'lbs']], weight.unit), 
         {},
@@ -30,11 +36,17 @@
         class: "block shadow rounded-md border border-gray-200 outline-none px-8 py-2 mt-2" %>
     </div>
   </div>
+  
   <div class="my-5">
+    <!-- Label for the date input field -->
     <%= form.label :date %>
+    <!-- Input field for the date of the weight entry with CSS classes for styling -->
     <%= form.date_field :date, class: "block shadow rounded-md border border-gray-400 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
+  
   <div class="inline">
+    <!-- Submit button with CSS classes for styling -->
     <%= form.submit class: "rounded-lg py-3 px-5 bg-blue-600 text-white inline-block font-medium cursor-pointer" %>
   </div>
+
 <% end %>

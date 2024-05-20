@@ -1,14 +1,23 @@
 <div id="<%= dom_id weight %>">
+  <!-- Container for displaying weight entry details, with a unique ID based on the weight object -->
+
   <p class="my-5">
+    <!-- Displaying the weight value with a label -->
     <strong class="block font-medium mb-1">Weight:</strong>
+    <!-- Display the preferred value of the weight with the specified default unit, truncated to 2 decimal places -->
     <%= weight.preferred_value(@default_unit).truncate(2) %> <%= @default_unit %>
   </p>
+
   <p class="my-5">
+    <!-- Displaying the date of the weight entry -->
     <em><%= weight.date %></em>
   </p>
+
   <% if action_name != "show" %>
+    <!-- Show links to view and edit the weight entry if the current action is not 'show' -->
     <%= link_to "Show this weight", weight, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <%= link_to "Edit this weight", edit_weight_path(weight), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
     <hr class="mt-6">
   <% end %>
+
 </div>

@@ -1,7 +1,17 @@
+/* Importing the Tailwind CSS styles for the pagy gem, which handles pagination */
 @import "pagy.tailwind.css";
+
+/* Including Tailwind's base styles, which include browser resets and base element styles */
 @tailwind base;
+/* Including Tailwind's component styles, which provide utility classes for building components */
 @tailwind components;
+/* Including Tailwind's utility styles, which offer various utility classes for styling elements */
 @tailwind utilities;
+
+/* 
+The following section is commented out. It demonstrates how to add custom component styles using 
+Tailwind's @layer directive. Uncomment and modify as needed to define custom styles.
+*/
 
 /*
 

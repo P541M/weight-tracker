@@ -1,17 +1,23 @@
 <div class="w-full">
   <% if notice.present? %>
+    <!-- Display a notice message if present, styled with Tailwind CSS classes -->
     <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
   <% end %>
 
   <% content_for :title, "Weights" %>
+  <!-- Set the content for the title to "Weights" -->
 
   <div class="flex justify-between items-center">
+    <!-- Flex container to position the heading and the new weight link -->
     <h1 class="font-bold text-4xl">Weights</h1>
+    <!-- Link to create a new weight entry, styled with Tailwind CSS classes -->
     <%= link_to "New weight", new_weight_path, class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
   </div>
 
   <div id="weights" class="min-w-full">
+    <!-- If there are multiple pages of weights, display the pagination navigation -->
     <%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+    <!-- Render the list of weights -->
     <%= render @weights %>
   </div>
 </div>
