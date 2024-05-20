@@ -1,24 +1,15 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Personal Weight Tracker
+This project is a comprehensive weight tracking application designed to help individuals monitor and analyze their weight over time. It provides tools for logging daily weights, visualizing weight trends, and setting health goals. *Created following a tutorial*
+## Installation
 
-Things you may want to cover:
+```
+git clone https://github.com/P541M/weight-tracker.git
+cd weight-tracker
+```
 
-* Ruby version
+## Resources
+[Tutorial I followed to create the webapp.](https://youtu.be/CfUuCwDQupI?si=nc_ShvHUKuiPbw46)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Contact
+Psalm Eleazar G. Videna - [Email](mailto:videna.psalmeleazar@gmail.com) - [LinkedIn](https://www.linkedin.com/in/pevidena/) - [GitHub](https://github.com/P541M)
